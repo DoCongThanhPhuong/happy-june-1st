@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gửi iu... ❤️✨</title>
+    <meta name="description" content="1/6/2026!" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Pacifico&family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Canvas cho Three.js 3D Scene -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Giao diện Chào mừng lúc đầu (Interactive Overlay) -->
+    <div id="landing-overlay" class="overlay-container active">
+      <div class="welcome-box">
+        <h1 class="welcome-title animated-gradient">Gửi iu... 💕</h1>
+        <p class="welcome-subtitle">Chúc iu 1/6 zui zẻ!</p>
+        <button
+          id="open-gift-btn"
+          class="glass-btn primary-btn instruction-pulse"
+          aria-label="Mở quà"
+        >
+          <i class="fa-solid fa-gift"></i>
+          <span>Bấm vào đây lè!</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Hộp thoại chứa thông điệp yêu thương (Greeting Card) -->
+    <div id="greeting-card" class="glass-card hidden">
+      <button id="close-card-btn" class="icon-btn-close" aria-label="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="card-header">
+        <h2 class="cute-font pink-text">Chúc Mừng Ngày 1/6! 🎈</h2>
+      </div>
+      <div class="card-body">
+        <p class="typing-text" id="greeting-message">
+          <!-- Sẽ được điền bằng hiệu ứng đánh chữ ở Script.js -->
+        </p>
+      </div>
+      <div class="card-footer">
+        <div class="interactive-guide">
+          <i class="fa-solid fa-arrows-left-right"></i> Kéo/Vuốt ngang màn hình
+          để xoay xem ảnh của tụi mình nhé!
+        </div>
+      </div>
+    </div>
+
+    <!-- Nút điều khiển âm thanh nhạc nền (Music Control) -->
+    <button
+      id="music-toggle-btn"
+      class="glass-btn float-btn"
+      aria-label="Bật/Tắt âm nhạc"
+    >
+      <i class="fa-solid fa-volume-xmark" id="music-icon"></i>
+      <span class="btn-text">Bật Nhạc</span>
+      <div class="music-waves hidden" id="music-waves">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+
+    <!-- Hộp thoại phóng to hình ảnh (Image Zoom Modal) -->
+    <div id="image-modal" class="modal hidden">
+      <button id="close-modal-btn" class="modal-close" aria-label="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-content">
+        <img id="modal-img" src="" alt="Ảnh kỷ niệm" />
+        <div class="modal-caption-wrapper">
+          <p id="modal-caption" class="modal-caption"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sparkle Sound Player (Fallback & Interaction sound) -->
+    <audio
+      id="click-sound"
+      src="https://assets.mixkit.co/active_storage/sfx/2568/2568-84.wav"
+      preload="auto"
+    ></audio>
+    <audio id="bg-music" src="music.mp3" loop preload="auto"></audio>
+
+    <!-- CDN Libraries: Three.js và GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Script code -->
+    <script src="script.js"></script>
+  </body>
+</html>
